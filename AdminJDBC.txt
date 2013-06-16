@@ -1,0 +1,65 @@
+WASL0007I: AdminJDBC 脚本库提供用于配置和查询
+	Java 数据库连接（JDBC）提供程序和数据源设置的脚本过程。
+
+	AdminJDBC 脚本库提供了下列脚本过程。
+	要显示关于每个脚本过程的详细信息，请使用 AdminJDBC 脚本库的 help 命令，
+	并指定所关注的脚本的名称作为参数。
+	可以使用下列格式（单元、节点、服务器和集群）
+	指定带作用域参数的脚本过程：
+	例如，可以将集群指定为：
+		"Cell=myCell,Cluster=myCluster" 或
+		"/Cell:myCell/ServerCluster:myCluster/" 或
+		"myCluster(cells/myCell/clusters/myCluster|cluster.xml#Cluster_1)"
+	可以将节点指定为：
+		"Cell=myCell,Node=myNode" 或
+		"/Cell:myCell/Node:myNode/" 或
+		"myNode(cells/myCell/nodes/myNode|node.xml#Node_1)" 
+	可以将服务器指定为：
+		"Cell=myCell,Node=myNode,Server=myServer" 或
+		"/Cell:myCell/Node:myNode/Server:myServer/" 或
+		"myServer(cells/myCell/nodes/myNode/servers/myServer|server.xml#Server_1)" 
+	可以使用列表或字符串格式指定带可选参数的
+	脚本过程：
+	例如，可以将 otherAttributeList 指定为：
+		"description=my new resource, isolatedClassLoader=true" 或
+		[["description", "my new resource"], ["isolatedClassLoader", "true"]] 
+
+
+createDataSource：
+	在配置中创建新的数据源。
+
+createJDBCProviderAtScope：
+	在环境中的指定作用域创建新的 JDBC 提供程序。
+
+createDataSourceUsingTemplate：
+	使用模板在配置中创建新的数据源。
+
+createJDBCProviderUsingTemplateAtScope：
+	使用模板在环境中的指定作用域创建新的 JDBC 提供程序。
+
+createJDBCProvider：
+	在环境中创建新的 JDBC 提供程序。
+
+createDataSourceAtScope：
+	在配置中的指定作用域创建新的数据源。
+
+createJDBCProviderUsingTemplate：
+	使用模板在环境中创建新的 JDBC 提供程序。
+
+createDataSourceUsingTemplateAtScope：
+	使用模板在配置中的指定作用域创建新的数据源。
+
+listDataSources：
+	显示配置中数据源的配置标识列表。
+
+listDataSourceTemplates：
+	显示环境中数据源模板的配置标识列表。
+
+listJDBCProviders：
+	显示环境中 JDBC 提供程序的配置标识列表。
+
+listJDBCProviderTemplates：
+	显示环境中 JDBC 提供程序模板的配置标识列表。
+
+help：
+	显示 AdminJDBC 脚本库联机帮助。

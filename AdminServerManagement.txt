@@ -1,0 +1,195 @@
+WASL0002I: AdminServerManagement 脚本库提供用于配置、管理和查询
+	服务器设置的脚本过程。
+
+	AdminServerManagement 脚本库提供了下列脚本过程。
+	要显示关于每个脚本过程的详细信息，请使用 AdminServerManagement 脚本库的 help 命令，
+	并指定所关注的脚本的名称作为参数。
+
+
+第 1 组：服务器配置
+
+checkIfServerExists：
+	确定所关注的服务器是否存在于配置中。
+
+checkIfServerTemplateExists：
+	确定所关注的服务器模板是否存在于配置中。
+
+configureApplicationServerClassloader：
+	配置应用程序服务器的类装入器。
+	类装入器使已部署在应用程序服务器上的应用程序能够访问可用类和资源的存储库。
+
+configureCookieForServer：
+	配置应用程序服务器配置中的 cookie。配置 cookie 以跟踪会话。
+
+configureCustomProperty：
+	配置应用程序服务器配置中的定制属性。
+	可以使用定制属性来配置内部系统属性，
+	某些组件会使用这些内部系统属性来完成特定任务，例如将信息传递给 Web 容器。
+
+configureEndPointsHost：
+	配置服务器端点的主机名。
+
+configureProcessDefinition：
+	配置服务器进程定义。
+	通过定义用于启动或初始化应用程序服务器进程的命令行信息
+	来增强应用程序服务器的操作。
+
+configureSessionManagerForServer：
+	此脚本用于为应用程序服务器配置会话管理器。
+	会话允许 Web 容器中运行的应用程序跟踪各个用户。
+
+createApplicationServer：
+	创建新的应用程序服务器。
+
+createAppServerTemplate：
+	创建新的应用程序服务器模板。
+
+createGenericServer：
+	创建新的通用服务器。
+
+createWebServer：
+	创建新的 Web 服务器。
+
+deleteServer：
+	删除服务器。
+
+deleteServerTemplate：
+	删除服务器模板。
+
+getJavaHome：
+	显示 Java home 值。
+
+getServerPID：
+	显示服务器进程标识。
+
+getServerProcessType：
+	显示特定服务器的服务器进程类型。
+
+listJVMProperties：
+	显示与 Java 虚拟机（JVM）配置相关联的属性。
+
+listServerTemplates：
+	显示配置中的服务器模板。
+
+listServerTypes：
+	显示相关节点上可用的服务器类型。
+
+listServers：
+	显示配置中存在的服务器。
+
+queryMBeans：
+	在应用程序服务器中查询受管 Bean（MBean）。
+
+setJVMProperties：
+	设置 Java 虚拟机属性
+
+showServerInfo：
+	显示相关服务器的服务器配置属性。
+
+startAllServers：
+	启动特定节点上的每个可用服务器。
+
+startSingleServer：
+	启动特定节点上的单个服务器。
+
+stopAllServers：
+	停止特定节点上每个正在运行的服务器。
+
+stopSingleServer：
+	停止特定节点上的单个正在运行的服务器。
+
+viewProductInformation：
+	显示应用程序服务器产品版本。
+
+第 2 组：ServerTracingAndLoggingConfiguration
+
+configureJavaProcessLogs：
+	配置应用程序服务器的 Java 进程日志。
+	系统通过将 JVM 的 System.out 和 System.err 流重定向至独立的日志文件来创建 JVM 日志。
+
+configureJavaVirtualMachine：
+	配置 Java 虚拟机（JVM）。
+	应用程序服务器（一个 Java 进程）需要有 JVM 才能运行和支持在它上面运行的 Java 应用程序。
+
+configurePerformanceMonitoringService：
+	在配置中配置性能监控基础结构（PMI）。
+
+configurePMIRequestMetrics：
+	在配置中配置 PMI 请求度量值。
+
+configureRASLoggingService：
+	配置 RAS 记录服务。
+
+configureServerLogs：
+	为所关注的应用程序服务器配置服务器日志。
+
+configureTraceService：
+	为应用程序服务器配置跟踪设置。
+	配置跟踪以获取有关运行应用程序服务器的详细信息。
+
+setTraceSpecification：
+	设置服务器的跟踪规范。
+
+第 3 组：OtherServicesConfiguration
+
+configureAdminService：
+	配置 AdminService 接口。
+	AdminService 接口是应用程序服务器管理功能的服务器端接口。
+
+configureCustomService：
+	在应用程序服务器配置中配置定制服务。
+	每个定制服务用于定义每次服务器启动和关闭时会装入和初始化的类。
+
+configureDynamicCache：
+	在服务器配置中配置动态高速缓存服务。
+	动态高速缓存服务在应用程序服务器 Java 虚拟机（JVM）中运行，它将拦截对可高速缓存对象的调用。
+
+configureEJBContainer：
+	在服务器配置中配置 Enterprise JavaBeans（EJB）容器。
+	EJB 容器为应用程序服务器中的企业 bean 提供运行时环境。
+
+configureFileTransferService：
+	为应用程序服务器配置文件传输服务。
+	文件传输服务用于将文件从 Deployment Manager 传输至各个远程节点。
+
+configureHTTPTransportEndPointForWebContainer：
+	为 Web 容器配置 HTTP 传输端点。
+
+configureHTTPTransportForWebContainer：
+	为 Web 容器配置 HTTP 传输方法。
+	传输方法提供 Web 服务器的应用程序服务器插件与
+	应用程序的 Web 模块所在 Web 容器之间的请求队列。
+
+configureListenerPortForMessageListenerService：
+	为服务器配置中的消息侦听器服务配置侦听器端口。
+	消息侦听器服务是对 JMS 提供程序的 Java 消息传递服务（JMS）功能的扩展。
+
+configureMessageListenerService：
+	在服务器配置中配置消息侦听器服务。
+	消息侦听器服务是对 JMS 提供程序的 Java 消息传递服务（JMS）功能的扩展。
+
+configureORBService：
+	在服务器配置中配置对象请求代理（ORB）服务。
+	对象请求代理（ORB）使用“因特网 ORB 间协议”（IIOP）来管理客户机与服务器之间的交互。
+
+configureRuntimeTransactionService：
+	配置服务器配置的事务服务。
+	事务服务是一个服务器运行时组件，用于协调对多个资源管理器的更新，以确保自动更新数据。
+
+configureStateManageable：
+	配置应用程序服务器的初始状态。
+	初始状态是指服务器进程启动时组件的预期状态。
+
+configureThreadPool：
+	配置服务器配置中的线程池。
+	线程池使服务器的组件能够复用线程，而不需要在运行时创建新的线程。
+
+configureTransactionService：
+	配置应用程序服务器的事务服务。
+
+configureWebContainer：
+	配置应用程序服务器配置中的 Web 容器。
+	Web 容器用于处理对包含服务器端代码的 Servlet、JavaServer Pages（JSP）文件和其他类型的文件的请求。
+
+help：
+	提供 AdminServerManagement 脚本库联机帮助。

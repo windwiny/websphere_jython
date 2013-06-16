@@ -1,0 +1,83 @@
+WASX7053I: AdminConfig 对象与 WebSphere 服务器
+	中的配置服务通信，以操纵 WebSphere 安装的
+	配置数据。AdminConfig 有用于列出、创建、
+	除去、显示和修改配置数据的命令以及用于
+	显示关于配置数据类型的信息的命令。
+
+	AdminConfig 支持的大多数命令以两种方式操作：
+	缺省方式下 AdminConfig
+	与 WebSphere 服务器通信以完成它的任务。也可使用本地方式，在此
+	方式下不发生服务器通信。操作的本地方式是通过以下方式调用的：
+	通过使用命令行“-conntype NONE”选项，在不连接服务器的情况下
+	显示脚本编制客户机或者
+	在 wsadmin.properties 中设置 
+	 “com.ibm.ws.scripting.connectionType=NONE”属性。
+
+	AdminConfig 支持以下命令；关于每个
+	命令的更详细信息可以通过使用
+	AdminConfig 的“help”命令并提供命令名称
+	作为参数来获得。
+
+attributes	显示给定类型的属性
+checkin		将文件检入到配置库。
+convertToCluster
+		将服务器转换为新
+		ServerCluster 的首个成员
+create		给定类型、父代和属性列表
+		以及（可选）新对象的属性名，
+		创建配置对象
+createClusterMember
+		创建新服务器，它是
+		现有集群的一个成员。
+createDocument	在配置库中创建一个新文档。
+createUsingTemplate
+		使用特定模板类型创建对象。
+defaults	显示给定类型的属性的缺省值。
+deleteDocument	从配置库删除文档。
+existsDocument	测试配置库中文档是否存在。
+extract		从配置库解压缩文件。
+getCrossDocumentValidationEnabled
+		如果启用交叉文档验证则返回 true。
+getid		显示对象的配置标识，需给定其包含
+		的字符串版本
+getObjectName	给定配置标识，返回相应运行 MBean 的 ObjectName 的
+		字符串版本（如果有）。
+getObjectType	给定配置标识，返回对象类型的字符串版本。
+getSaveMode	返回调用“save”时使用的方式
+getValidationLevel
+		返回从存储库中抽取文件时使用的
+		验证。
+getValidationSeverityResult
+		从最近的验证返回给定
+		严重性的消息数。
+hasChanges	如果存在未保存的配置更改则返回 true
+help		显示帮助信息
+installResourceAdapter
+		使用给定的 rar 文件名和节点中的选项字符串
+		来安装 J2C 资源适配器。
+list		列出给定类型的所有配置对象
+listTemplates	列出给定类型的所有可用配置
+		模板。
+modify		更改给定配置对象的指定属性
+parents		显示包含给定类型的对象
+queryChanges	返回未保存文件的列表
+remove		除去指定的配置对象
+required	显示给定类型的必需属性。
+reset		废弃未保存的配置更改
+resetAttributes	复位所指定各属性的值。
+save		将未保存的更改落实到配置库
+setCrossDocumentValidationEnabled
+		设置交叉文档验证启用方式。
+setSaveMode	更改调用“save”时使用的方式
+setValidationLevel
+		设置从存储库中抽取文件时使用的
+		验证。
+show		显示给定配置对象的属性
+showall		递归地显示给定配置对象的属性
+		以及每个属性中包含的所有对象。
+showAttribute	仅显示指定的单个属性的值。
+types		显示可能的配置类型
+uninstallResourceAdapter
+		使用给定的资源适配器配置标识来卸载 J2C 资源适配器。
+unsetAttributes	取消设置所指定各属性的值。
+validate	调用验证

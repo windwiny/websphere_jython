@@ -1,0 +1,41 @@
+WASL0009I: AdminNodeManagement 脚本库提供用于配置和管理
+	节点组设置的脚本过程。
+
+	AdminNodeManagement 脚本库提供了下列脚本过程。
+	要显示关于每个脚本过程的详细信息，请使用 AdminNodeManagement 脚本库的 help 命令，
+	并指定所关注的脚本的名称作为参数。
+
+
+
+configureDiscoveryProtocolOnNode：
+	配置节点发现协议
+
+doesNodeExist：
+	检查单元中是否存在节点
+
+isNodeRunning：
+	检查节点是否处于运行状态
+
+listNodes：
+	列示单元中的可用节点
+
+restartActiveNodes：
+	重新启动单元中处于运行状态的所有节点
+
+restartNodeAgent：
+	重新启动指定节点中处于运行状态的所有进程
+
+stopNode：
+	停止所指定节点中的所有进程，其中包括 Node Agent 和应用程序服务器
+
+stopNodeAgent：
+	停止所指定节点中的 Node Agent 进程
+
+syncActiveNodes：
+	使处于运行状态的所有节点存储库与单元存储库同步
+
+syncNode：
+	使指定的节点存储库与单元存储库同步
+
+help：
+	提供 AdminNodeManagement 脚本库联机帮助

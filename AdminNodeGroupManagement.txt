@@ -1,0 +1,51 @@
+WASL0004I: AdminNodeGroupManagement 脚本库提供用于配置和管理
+	节点组设置的脚本过程。
+
+	AdminNodeGroupManagement 脚本库提供了下列脚本过程。
+	要显示关于每个脚本过程的详细信息，请使用 AdminNodeGroupManagement 脚本库的 help 命令，
+	并指定您所关注的脚本的名称作为参数。
+
+
+addNodeGroupMember：
+	将节点添加至配置中存在的节点组。
+
+checkIfNodeExists：
+	显示特定节点组中是否存所关注的节点。
+
+checkIfNodeGroupExists：
+	显示特定节点组是否存在于配置中。
+
+createNodeGroup：
+	在配置中创建新的节点组。
+
+createNodeGroupProperty：
+	为所关注的节点组指定定制属性。
+
+deleteNodeGroup：
+	从配置中删除节点组。
+
+deleteNodeGroupMember：
+	从配置中的特定节点组中除去节点。
+
+deleteNodeGroupProperty：
+	从节点组中除去特定的定制属性。
+
+help：
+	显示 AdminNodeGroupManagement 脚本库支持的脚本过程。
+	要显示关于特定脚本的详细帮助，请指定您所关注的脚本的名称。
+
+listNodeGroupMembers：
+	列示特定节点组中已配置的每个节点的名称。
+
+listNodeGroupProperties：
+	列示特定节点组中已配置的定制属性。
+
+listNodeGroups：
+	显示配置中存在的节点组。
+	如果您指定特定节点的名称，那么该脚本将返回该节点所属节点组的名称。
+
+modifyNodeGroup：
+	修改节点组的短名称和描述。
+
+modifyNodeGroupProperty：
+	修改已为节点组指定的定制属性的值。

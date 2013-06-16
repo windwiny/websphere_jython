@@ -1,0 +1,57 @@
+WASL0013I: AdminUtilities 脚本库提供用于管理实用程序设置的脚本过程。
+
+	AdminUtilities 脚本库提供了下列脚本过程。
+	要显示关于每个脚本过程的详细信息，请使用 AdminUtilities 脚本库的 help 命令，
+	并指定您所关注的脚本的名称作为参数。
+
+
+convertToList：
+	将字符串转换为列表
+
+configureAutoSave：
+	设置配置自动保存
+
+debugNotice：
+	设置调试通知
+
+getExceptionText：
+	获取异常文本
+
+fail：
+	故障消息
+
+fileSearch：
+	以递归方式搜索文件
+
+getResourceBundle：
+	获取资源束
+
+getScriptLibraryFiles：
+	获取脚本库文件
+
+getScriptLibraryList：
+	获取列表的脚本库名
+
+getScriptLibraryPath：
+	获取脚本库路径
+
+help：
+	提供联机帮助
+
+infoNotice：
+	设置信息通知
+
+save：
+	保存所有配置更改
+
+setDebugNotices：
+	设置调试通知
+
+setFailOnErrorDefault：
+	设置 failonerror 缺省值
+
+sleepDelay：
+	设置休眠延迟
+
+warningNotice：
+	设置警告通知

@@ -1,0 +1,77 @@
+WASL0003I: AdminClusterManagement 脚本库提供用于配置和管理
+	服务器集群的脚本过程。
+
+	AdminClusterManagement 脚本库提供了下列脚本过程。
+	要显示关于每个脚本过程的详细信息，请使用 AdminClusterManagement 脚本库的 help 命令，
+	并指定您所关注的脚本的名称作为参数。
+
+
+checkIfClusterExists：
+	显示配置中是否存在所关注的集群。
+
+checkIfClusterMemberExists：
+	显示配置中是否存在所关注的集群服务器成员。
+
+createClusterMember：
+	将服务器集群成员分配给特定集群。当您创建第一个集群成员时，
+	该成员的副本将作为集群数据的一部分进行存储，并且将成为您创建所有其他集群成员的模板。
+
+createClusterWithFirstMember：
+	创建新的集群配置，并将第一个集群成员添加至集群。
+
+createClusterWithoutMember：
+	在环境中创建新的集群配置。
+
+createFirstClusterMemberWithTemplate：
+	使用模板将第一个服务器集群成员添加至特定集群。
+	您创建的第一个集群成员的副本作为一个模板存储在集群作用域内。
+
+createFirstClusterMemberWithTemplateNodeServer：
+	将节点与现有应用程序服务器配合使用作为一个模板，以在配置中创建新的集群成员。
+	当您创建第一个集群成员时，该成员的副本将作为集群数据的一部分进行存储，
+	并且将成为您创建所有其他集群成员的模板。
+
+deleteCluster：
+	删除服务器集群的配置。
+	服务器集群由一组称为集群成员的应用程序服务器组成。
+	该脚本将删除该服务器集群以及它的每个集群成员。
+
+deleteClusterMember：
+	从集群配置中除去集群成员。
+
+help：
+	提供 AdminClusterManagement 脚本库联机帮助。
+
+immediateStopAllRunningClusters：
+	停止特定单元中每个活动集群的服务器集群成员。
+	服务器将忽略所有当前任务或暂挂任务。
+
+immediateStopSingleCluster：
+	停止某个单元中特定集群的服务器集群成员。
+	服务器将忽略所有当前任务或暂挂任务。
+
+listClusterMembers：
+	显示特定集群配置中存在的服务器集群成员。
+
+listClusters：
+	显示配置中存在的每个集群。
+
+rippleStartAllClusters：
+	停止然后重新启动单元配置中的每个集群。
+
+rippleStartSingleCluster：
+	停止然后重新启动特定集群配置中的集群成员。
+
+startAllClusters：
+	启动单元配置中的每个集群。
+
+startSingleCluster：
+	启动配置中的特定集群。
+
+stopAllClusters：
+	停止特定单元中每个活动集群的服务器集群成员。
+	每个服务器停止时将允许该服务器完成现有请求并且允许故障转移至该集群中的另一个成员。
+
+stopSingleCluster：
+	停止某个单元中特定活动集群的服务器集群成员。
+	每个服务器停止时将允许该服务器完成现有请求并且允许故障转移至该集群中的另一个成员。

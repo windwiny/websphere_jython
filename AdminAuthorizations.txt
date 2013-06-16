@@ -1,0 +1,72 @@
+WASL0005I: AdminAuthorizations 脚本库提供用于配置
+	安全性授权组的脚本过程。
+
+	AdminAuthorizations 脚本库提供了下列脚本过程。
+	要显示关于每个脚本过程的详细信息，请使用 AdminAuthorizations 脚本库的 help 命令，
+	并指定所关注的脚本的名称作为参数。
+
+
+addResourceToAuthorizationGroup：
+	将资源添加至现有授权组。
+
+createAuthorizationGroup：
+	创建新的授权组。
+
+deleteAuthorizationGroup：
+	删除现有授权组。
+
+help：
+	显示 AdminClusterManagement 脚本库支持的脚本过程。
+	要显示关于特定脚本的详细帮助，请指定您所关注的脚本的名称。
+
+listAuthorizationGroups：
+	列示配置中的现有授权组。
+
+listAuthorizationGroupsForGroupID：
+	列示特定组可以访问的授权组。
+
+listAuthorizationGroupsForUserID：
+	列示特定用户可以访问的授权组。
+
+listAuthorizationGroupsOfResource：
+	列示特定资源所映射至的每个授权组。
+
+listGroupIDsOfAuthorizationGroup：
+	显示与特定授权组相关联的组标识和访问级别。
+
+listResourcesForGroupID：
+	显示特定组标识可以访问的资源。
+
+listResourcesForUserID：
+	显示特定用户标识可以访问的资源。
+
+listResourcesOfAuthorizationGroup：
+	显示与特定授权组相关联的资源。
+
+listUserIDsOfAuthorizationGroup：
+	显示与特定授权组相关联的用户标识和访问级别。
+
+mapGroupsToAdminRole：
+	将组标识映射至授权组中的一个或多个管理角色。
+	您提供的授权组的名称将确定授权表。
+	如果使用了 LDAP 用户注册表，那么组标识可以是短名称或者标准域名。
+
+mapUsersToAdminRole：
+	将用户标识映射至授权组中的一个或多个管理角色。
+	您提供的授权组的名称将确定授权表。
+	如果使用了 LDAP 用户注册表，那么用户标识可以是短名称或者标准域名。
+
+removeGroupFromAllAdminRoles：
+	从配置中每个授权组中的管理角色除去特定组。
+
+removeGroupsFromAdminRole：
+	从所关注的授权组中的管理角色除去特定组。
+
+removeResourceFromAuthorizationGroup：
+	从所关注的授权组中除去特定资源。
+
+removeUsersFromAdminRole：
+	从所关注的授权组中的管理角色除去特定用户。
+
+removeUserFromAllAdminRoles：
+	从配置中每个授权组中的管理角色除去特定用户。

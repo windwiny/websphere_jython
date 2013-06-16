@@ -1,0 +1,81 @@
+WASX7027I: AdminControl 对象用于对 WebSphere 服务器进程中
+	运行的 MBean 进行操纵。可供脚本编制客户机使用的
+	MBean 数目和类型取决于客户机所连接的服务器。
+	如果客户机连接到 Deployment Manager，那么 Deployment Manager
+	中运行的所有 MBean 都可视，并且，在连接到此 Deployment Manager
+	的 Node Agent 中运行的所有 MBean 以及那些节点上的应用程序服务器中
+	运行的所有 MBean 也都可视。
+
+	AdminControl 支持下列命令；通过使用 AdminControl 的“help”命令
+	并提供命令名称作为参，可以获得有关每个命令的更详细信息。
+
+	注意，在这些命令中，许多命令支持两组不同的特征符：
+	其中一组接受并返回字符串，另一个低级的组使用 JMX
+	对象，例如 ObjectName 和 AttributeList。
+	在大多数情况下，字符串特征符可能更有用，但还是提供了
+	JMX 对象特征符版本。在这些 JMX 对象特征符命令中，
+	每个命令的命令名都附加了“_jmx”。
+	因此，存在“invoke”命令以及“invoke_jmx”命令。
+
+completeObjectName
+		给定模板名，返回对象名的 String
+		版本
+getAttribute_jmx
+		给定 ObjectName 和属性名，返回
+		属性值
+getAttribute	给定 ObjectName 的 String 版本以及属性名，
+		返回属性值
+getAttributes_jmx
+		给定 ObjectName 和属性名数组，返回
+		AttributeList。
+getAttributes	给定 ObjectName 的 String 版本以及属性名，
+		返回“名称/值”对的 String。给定 ObjectName 的 String 版本，
+		返回所有“名称/值”对的 String。
+
+getCell		返回所连接的服务器的单元名。
+getConfigId	给定 ObjectName 的 String 版本，如果有相应的配置对象，
+		那么返回该对象的配置标识。
+getDefaultDomain
+		返回“WebSphere”
+getDomainName	返回“WebSphere”
+
+getHost		返回已连接主机的 String 表示
+getMBeanCount	返回已注册 bean 数
+getMBeanInfo_jmx
+		给定 ObjectName，返回 MBean 的 MBeanInfo 结构
+
+getNode		返回已连接服务器的节点名
+getObjectInstance
+		给定 ObjectName 的 String 版本，
+		返回匹配的 ObjectInstance 对象。
+getPort		返回使用中的端口的 String 表示
+getType		返回使用中的连接类型的 String 表示
+help		显示帮助信息
+invoke_jmx	给定 ObjectName、方法名、参数数组以及
+		特征符，在指定的 MBean 上调用方法
+invoke		在指定的 MBean 上调用方法
+isRegistered_jmx
+		如果提供的 ObjectName 已注册，那么为 true
+isRegistered	如果提供的 String 版本的 ObjectName 已注册，那么为 true
+makeObjectName	返回使用给定字符串构建的 ObjectName
+queryNames_jmx	给定 ObjectName 和 QueryExp，检索匹配的 ObjectName
+		集合。
+queryNames	给定 ObjectName 的 String 版本，检索
+		匹配的 ObjectName 的 String。
+queryMBeans	给定 ObjectName 的 String 版本，返回匹配的
+		ObjectInstances 对象集。
+reconnect	重新与服务器连接
+setAttribute_jmx
+		给定 ObjectName 和 Attribute 对象，为指定的 MBean 设置
+		属性
+setAttribute	给定 ObjectName 的 String 版本、属性名和
+		属性值，为指定的 MBean 设置属性
+setAttributes_jmx
+		给定 ObjectName 和 AttributeList 对象，为指定的 MBean 设置
+		属性
+setAttributes	给定 ObjectName 的 String 版本、属性名
+		和值对，为指定的 MBean 设置属性
+startServer	给定服务器名，启动该服务器。
+stopServer	给定服务器名，停止该服务器。
+testConnection	测试到 DataSource 对象的连接
+trace		设置 wsadmin 跟踪规范

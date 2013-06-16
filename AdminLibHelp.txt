@@ -1,0 +1,30 @@
+WASL0012I: AdminLibHelp 提供 wsadmin 工具的 Jython 脚本库
+	的一般帮助信息。
+
+	每个脚本库都包含多个用于执行各种管理功能的脚本过程。
+	要显示特定脚本库的详细信息，请使用 AdminLibHelp 对象的
+	help 选项，并指定所关注的脚本库作为参数。
+	例如，AdminLibHelp.help("AdminApplication")
+	将返回 AdminApplication 脚本库的详细信息。
+
+
+AdminApplication：	提供用于配置、管理和部署应用程序的
+			脚本过程。
+AdminAuthorizations：	提供用于配置安全性授权组的脚本过程。
+
+AdminBLA：		提供用于配置、管理和部署业务级应用程序的脚本过程。
+AdminClusterManagement：	提供用于配置和管理服务器集群的脚本过程。
+AdminJ2C：		提供用于配置和查询 J2EE 连接器（J2C）资源设置的
+			脚本过程。
+AdminJDBC：		提供用于配置和查询 Java 数据库连接（JDBC）和
+			数据源设置的脚本过程。
+AdminJMS：		提供用于配置和查询 Java 消息传递服务（JMS）提供程序和
+			资源设置的脚本过程。
+
+AdminLibHelp：		提供脚本库的一般帮助信息。
+AdminNodeGroupManagement：	提供用于配置和管理节点组设置的脚本过程。
+AdminNodeManagement：	提供用于配置和管理节点设置的脚本过程。
+AdminResources：		提供用于配置和管理邮件、URL 和资源提供程序
+			设置的脚本过程。
+AdminServerManagement：	提供用于配置、管理和查询服务器设置的脚本过程。
+AdminUtilities：		提供用于管理实用程序设置的脚本过程。

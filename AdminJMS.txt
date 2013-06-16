@@ -1,0 +1,200 @@
+WASL0008I: AdminJMS 脚本库提供用于配置和查询
+	Java 消息传递服务（JMS）提供程序和资源设置的脚本过程。
+
+	AdminJMS 脚本库提供了下列脚本过程。
+	要显示关于每个脚本库的详细信息，请使用 AdminJMS 脚本库的 help 命令，
+	并指定所关注的脚本的名称作为参数。
+	可以使用下列格式（单元、节点、服务器和集群）
+	指定带作用域参数的脚本过程：
+	例如，可以将集群指定为：
+		"Cell=myCell,Cluster=myCluster" 或
+		"/Cell:myCell/ServerCluster:myCluster/" 或
+		"myCluster(cells/myCell/clusters/myCluster|cluster.xml#Cluster_1)"
+	可以将节点指定为：
+		"Cell=myCell,Node=myNode" 或
+		"/Cell:myCell/Node:myNode/" 或
+		"myNode(cells/myCell/nodes/myNode|node.xml#Node_1)" 
+	可以将服务器指定为：
+		"Cell=myCell,Node=myNode,Server=myServer" 或
+		"/Cell:myCell/Node:myNode/Server:myServer/" 或
+		"myServer(cells/myCell/nodes/myNode/servers/myServer|server.xml#Server_1)" 
+	可以使用列表或字符串格式指定带可选参数的
+	脚本过程：
+	例如，可以将 otherAttributeList 指定为：
+		"readAhead=AlwaysOff, maxBatchSize=54" 或
+		[["readAhead", "AlwaysOff"], ["maxBatchSize", 54]] 
+
+
+createGenericJMSConnectionFactory：
+	创建新的 GenericJMSConnectionFactory
+
+createGenericJMSConnectionFactoryAtScope：
+	在指定的作用域创建新的 GenericJMSConnectionFactory
+
+createGenericJMSConnectionFactoryUsingTemplate：
+	使用模板创建新的 GenericJMSConnectionFactory
+
+createGenericJMSConnectionFactoryUsingTemplateAtScope：
+	使用模板在指定的作用域创建新的 GenericJMSConnectionFactory
+
+createGenericJMSDestination：
+	创建新的 GenericJMSDestination
+
+createGenericJMSDestinationAtScope：
+	在指定的作用域创建新的 GenericJMSDestination
+
+createGenericJMSDestinationUsingTemplate：
+	使用模板创建新的 GenericJMSDestination
+
+createGenericJMSDestinationUsingTemplateAtScope：
+	使用模板在指定的作用域创建新的 GenericJMSDestination
+
+createJMSProvider：
+	创建新的 JMSProvider
+
+createJMSProviderAtScope：
+	在指定的作用域创建新的 JMSProvider
+
+createJMSProviderUsingTemplate：
+	使用模板创建新的 JMSProvider
+
+createJMSProviderUsingTemplateAtScope：
+	使用模板在指定的作用域创建新的 JMSProvider
+
+createSIBJMSActivationSpec：
+	创建 SIB JMS 激活规范
+
+createSIBJMSConnectionFactory：
+	创建 SIB JMS 连接工厂
+
+createSIBJMSQueue：
+	创建 SIB JMS 队列
+
+createSIBJMSQueueConnectionFactory：
+	创建 SIB JMS 队列连接工厂
+
+createSIBJMSTopic：
+	创建 SIB JMS 主题
+
+createSIBJMSTopicConnectionFactory：
+	创建 SIB JMS 主题连接工厂
+
+createWASTopic：
+	创建新的 WASTopic
+
+createWASTopicAtScope：
+	在指定的作用域创建新的 WASTopic
+
+createWASTopicUsingTemplate：
+	使用模板创建新的 WASTopic
+
+createWASTopicUsingTemplateAtScope：
+	使用模板在指定的作用域创建新的 WASTopic
+
+createWASTopicConnectionFactory：
+	创建新的 WASTopicConnectionFactory
+
+createWASTopicConnectionFactoryAtScope：
+	在指定的作用域创建新的 WASTopicConnectionFactory
+
+createWASTopicConnectionFactoryUsingTemplate：
+	使用模板创建新的 WASTopicConnectionFactory
+
+createWASTopicConnectionFactoryUsingTemplateAtScope：
+	使用模板在指定的作用域创建新的 WASTopicConnectionFactory
+
+createWASQueue：
+	创建新的 WASQueue
+
+createWASQueueAtScope：
+	在指定的作用域创建新的 WASQueue
+
+createWASQueueUsingTemplate：
+	创建新的 WASQueueUsingTemplate
+
+createWASQueueUsingTemplateAtScope：
+	在指定的作用域创建新的 WASQueueUsingTemplate
+
+createWASQueueConnectionFactory：
+	创建新的 WASQueueConnectionFactory
+
+createWASQueueConnectionFactoryAtScope：
+	在指定的作用域创建新的 WASQueueConnectionFactory
+
+createWASQueueConnectionFactoryUsingTemplate：
+	使用模板创建新的 WASQueueConnectionFactory
+
+createWASQueueConnectionFactoryUsingTemplateAtScope：
+	使用模板在指定的作用域创建新的 WASQueueConnectionFactory
+
+createWMQActivationSpec：
+	创建 WMQ 激活规范
+
+createWMQConnectionFactory：
+	创建 WMQ 连接工厂
+
+createWMQQueue：
+	创建 WMQ 队列
+
+createWMQQueueConnectionFactory：
+	创建 WMQ 队列连接工厂
+
+createWMQTopic：
+	创建 WMQ 主题
+
+createWMQTopicConnectionFactory：
+	创建 WMQ 主题连接工厂
+
+listGenericJMSConnectionFactories：
+	列示 GenericJMSConnectionFactories
+
+listGenericJMSConnectionFactoryTemplates：
+	列示 GenericJMSConnectionFactory 模板
+
+listGenericJMSDestinations：
+	列示 GenericJMSDestinations
+
+listGenericJMSDestinationTemplates：
+	列示 GenericJMSDestination 模板
+
+listJMSConnectionFactories：
+	列示 JMSConnectionFactories
+
+listJMSDestinations：
+	列示 JMSDestinations
+
+listJMSProviders：
+	列示 JMSProviders
+
+listJMSProviderTemplates：
+	列示 JMSProvider 模板
+
+listWASTopics：
+	列示 WASTopics
+
+listWASTopicConnectionFactories：
+	列示 WASTopicConnectionFactories
+
+listWASTopicConnectionFactoryTemplates：
+	列示 WASTopicConnectionFactory 模板
+
+listWASTopicTemplates：
+	列示 WASTopic 模板
+
+listWASQueues：
+	列示 WASQueues
+
+listWASQueueConnectionFactories：
+	列示 WASQueueConnectionFactories
+
+listWASQueueConnectionFactoryTemplates：
+	列示 WASQueueConnectionFactory 模板
+
+listWASQueueTemplates：
+	列示 WASQueue 模板
+
+startListenerPort：
+	启动侦听器端口
+
+help：
+	提供 AdminJMS 脚本库联机帮助

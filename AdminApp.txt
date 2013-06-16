@@ -1,0 +1,51 @@
+WASX7095I: AdminApp 对象允许操纵应用程序
+	对象 － 这包括安装、卸载、编辑
+	和列出。AdminApp 支持的大多数命令以两种方式
+	操作：缺省方式下 AdminApp
+	与 WebSphere 服务器通信以完成任务。也可使用本地方式，在此
+	方式下不发生服务器通信。操作的本地方式是通过以下方式调用的：
+	通过使用命令行“-conntype NONE”选项，在不连接服务器的情况下
+	显示脚本编制客户机或者
+	在 wsadmin.properties 中设置 
+	 “com.ibm.ws.scripting.connectionType=NONE”属性。
+
+	AdminApp 支持以下命令；关于每个
+	命令的更详细信息可以通过使用
+	AdminApp 的“help”命令并提供命令名称
+	作为参数来获得。
+
+deleteUserAndGroupEntries 
+		删除给定应用程序所有角色的
+		用户/组信息和给定应用程序的 RunAs 角色的
+		所有用户名/密码信息。
+edit		编辑应用程序的属性
+editInteractive	交互式编辑应用程序的属性
+export		将应用程序导出到文件
+exportDDL	将 DDL 从应用程序导出到某个目录
+exportFile	将应用程序中单个文件的内容导出到某个文件中
+getDeployStatus	返回应用程序的组合部署状态
+help		显示帮助信息
+
+install		安装应用程序，给定文件名和选项字符串。
+
+installInteractive
+		给定文件名和选项字符串，
+		以交互方式安装应用程序。
+isAppReady	检查应用程序是否已准备运行
+list		列示已安装的所有应用程序
+listModules	列示指定应用程序中的模块
+options		显示可用于给定文件、应用程序
+		或一般项的选项。
+publishWSDL	为给定应用程序发布 WSDL 文件
+searchJNDIReferences
+		列出在给定节点上引用给定 JNDIName 的应用程序
+taskInfo	为给定文件显示与给定安装任务相关的
+		详细信息
+uninstall	卸载给定应用程序名称和选项字符串的
+		应用程序
+update		更新安装的应用程序
+updateAccessIDs	用来自给定应用程序的用户注册表
+		的 accessID 更新用户/组绑定信息
+updateInteractive	交互式地更新安装的应用程序
+view		查看给定应用程序或模块名的
+		应用程序或模块

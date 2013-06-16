@@ -1,0 +1,58 @@
+WASL0011I: AdminBLA 脚本库提供用于配置、管理和部署
+	业务级应用程序的脚本过程。
+
+	AdminBLA 脚本库提供了下列脚本过程。
+	要显示关于每个脚本过程的详细信息，请使用 AdminBLA 脚本库的 help 命令，
+	并指定所关注的脚本的名称作为参数。
+
+
+addCompUnit：
+	将组合单元添加至业务级应用程序
+
+createEmptyBLA：
+	创建空的业务级应用程序
+
+deleteAsset：
+	从 WebSphere 配置库中删除已注册的资产
+
+deleteBLA：
+	删除业务级应用程序
+
+deleteCompUnit：
+	删除业务级应用程序中的组合单元
+
+editAsset：
+	编辑资产元数据
+
+editCompUnit：
+	编辑业务级应用程序中的组合单元
+
+exportAsset：
+	将已注册的资产导出至文件
+
+help：
+	提供 AdminBLA 脚本库联机帮助
+
+importAsset：
+	在 WebSphere 管理域中导入并注册资产
+
+listAssets：
+	列示单元中的已注册资产
+
+listBLAs：
+	列示单元中的业务级应用程序
+
+listCompUnits：
+	列示业务级应用程序中的组合单元
+
+startBLA：
+	启动业务级应用程序
+
+stopBLA：
+	停止业务级应用程序
+
+viewAsset：
+	查看已注册的资产
+
+viewCompUnit：
+	查看业务级应用程序中的组合单元

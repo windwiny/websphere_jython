@@ -1,0 +1,20 @@
+WASX8001I: AdminTask 对象启用执行可用的 admin 命令。AdminTask 命令以两种方式操作：
+ 	缺省方式下，AdminTask 与 WebSphere 服务器通信来完成它的任务。也可使用本地方式，在此
+	方式下不发生服务器通信。本地方式操作是使用命令行“-conntype NONE”选项或在 wsadmin.properties 文件中设置“com.ibm.ws.scripting.connectiontype=NONE”属性以建立编制脚本客户机来调用。
+admin 命令的数量的变化取决于您的 WebSphere 安装。请使用下列 help 命令来获取受支持命令及其参数的列表：
+
+help -commands			列示所有 admin 命令
+help -commands <pattern>	列示与通配符“pattern”匹配的
+				admin 命令
+help -commandGroups		列示所有 admin 命令组
+help -commandGroups <pattern>	列示与通配符“pattern”匹配的
+				admin 命令组
+help commandName		显示所指定命令的详细信息
+help commandName stepName	显示属于所指定命令的
+				所指定步骤的详细信息
+help commandGroupName		显示所指定命令组的详细信息
+
+可以通过各种方法来调用 admin 命令。它们是调用 admin 命令的 commandName，并且不需要任何参数。
+commandName targetObject	 使用指定的目标对象字符串来调用 admin 命令，例如，资源适配器的配置对象名。需要的目标对象根据调用的 admin 命令而改变。使用帮助命令来获取 admin 命令上目标对象的信息。
+commandName options		使用指定的选项字符串调用 admin 命令。此调用语法用于调用不需要目标对象的 admin 命令。这还用于进入交互方式（如果在选项字符串中包括了				“-interactive”方式。
+commandName targetObject options	使用指定的目标对象和选项字符串调用 admin 命令。如果在选项字符串中包括“-interactive”，那么进入交互方式。					目标对象和选项字符串根据调用的 admin 命令而改变。					使用帮助命令来获取目标对象和选项的信息。

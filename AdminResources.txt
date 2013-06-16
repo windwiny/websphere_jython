@@ -1,0 +1,119 @@
+WASL0010I: AdminResources 脚本库提供用于配置和管理
+	邮件、URL 和资源提供程序设置的脚本过程。
+
+	AdminResources 脚本库提供了下列脚本过程。
+	要显示关于每个脚本过程的详细信息，请使用 AdminResources 脚本库的 help 命令，
+	并指定所关注的脚本的名称作为参数。
+	可以使用下列格式（单元、节点、服务器和集群）
+	指定带作用域参数的脚本过程：
+	例如，可以将集群指定为：
+		"Cell=myCell,Cluster=myCluster" 或
+		"/Cell:myCell/ServerCluster:myCluster/" 或
+		"myCluster(cells/myCell/clusters/myCluster|cluster.xml#Cluster_1)"。
+	可以将节点指定为：
+		"Cell=myCell,Node=myNode" 或
+		"/Cell:myCell/Node:myNode/" 或
+		"myNode(cells/myCell/nodes/myNode|node.xml#Node_1)"
+	可以将服务器指定为：
+		"Cell=myCell,Node=myNode,Server=myServer" 或
+		"/Cell:myCell/Node:myNode/Server:myServer/" 或
+		"myServer(cells/myCell/nodes/myNode/servers/myServer|server.xml#Server_1)"
+	可以使用列表或字符串格式指定带可选参数的
+	脚本过程：
+	例如，可以将 otherAttributeList 指定为：
+		"description=my new resource, isolatedClassLoader=true" 或
+		[["description", "my new resource"], ["isolatedClassLoader", "true"]] 
+
+
+createCompleteMailProvider：
+	使用协议提供程序、邮件会话和定制属性创建邮件提供程序
+
+createCompleteMailProviderAtScope：
+	使用协议提供程序、邮件会话和定制属性在作用域内创建邮件提供程序
+
+createCompleteResourceEnvProvider：
+	使用可引用的资源环境、资源环境项和定制属性创建资源环境提供程序
+
+createCompleteResourceEnvProviderAtScope：
+	使用可引用的资源环境、资源环境项和定制属性在作用域内创建资源环境提供程序
+
+createCompleteURLProvider：
+	使用 URL 和定制属性创建 URL 提供程序
+
+createCompleteURLProviderAtScope：
+	使用 URL 和定制属性在作用域内创建 URL 提供程序
+
+createJAASAuthenticationAlias：
+	创建 JAAS 认证别名
+
+createLibraryRef：
+	创建库引用
+
+createMailProvider：
+	创建邮件提供程序
+
+createMailProviderAtScope：
+	在作用域内创建邮件提供程序
+
+createMailSession：
+	为邮件提供程序创建邮件会话
+
+createMailSessionAtScope：
+	在作用域内为邮件提供程序创建邮件会话
+
+createProtocolProvider：
+	为邮件提供程序创建协议提供程序
+
+createProtocolProviderAtScope：
+	在作用域内为邮件提供程序创建协议提供程序
+
+createResourceEnvEntries：
+	创建资源环境项
+
+createResourceEnvEntriesAtScope：
+	在作用域内创建资源环境项
+
+createResourceEnvProvider：
+	创建资源环境提供程序
+
+createResourceEnvProviderAtScope：
+	在作用域内创建资源环境提供程序
+
+createResourceEnvProviderRef：
+	创建可引用的资源环境提供程序
+
+createResourceEnvProviderRefAtScope：
+	在作用域内创建可引用的资源环境提供程序
+
+createScheduler：
+	创建调度程序资源
+
+createSchedulerAtScope：
+	在作用域内创建调度程序资源
+
+createSharedLibrary：
+	创建共享库
+
+createSharedLibraryAtScope：
+	在作用域内创建共享库
+
+createURL：
+	为 URL 提供程序创建新的 URL
+
+createURLAtScope：
+	在作用域内为 URL 提供程序创建新的 URL
+
+createURLProvider：
+	创建 URL 提供程序
+
+createURLProviderAtScope：
+	在作用域内创建 URL 提供程序
+
+createWorkManager：
+	创建工作管理器
+
+createWorkManagerAtScope：
+	在作用域内创建工作管理器
+
+help：
+	提供 AdminResources 脚本库联机帮助

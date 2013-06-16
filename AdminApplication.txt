@@ -1,0 +1,183 @@
+WASL0001I: AdminApplication 脚本库提供用于配置、管理和部署
+	应用程序的脚本过程。
+
+	Adminapplication 脚本库提供了下列脚本过程。
+	要显示关于每个脚本过程的详细信息，请使用 AdminApplication 脚本库的 help 命令，
+	并指定您所关注的脚本的名称作为参数。
+
+
+第 1 组：安装和卸载应用程序
+
+installAppModulesToDiffServersWithPatternMatching：
+	使用 Java 模式匹配将应用程序模块
+	安装至不同的应用程序服务器
+
+installAppModulesToDiffServersWithMapModulesToServersOption：
+	使用 AdminApp 对象的 MapModulesToServers 选项将应用程序模块
+	安装至不同的应用程序服务器。
+
+installAppModulesToMultiServersWithPatternMatching：
+	使用 Java 模式匹配将应用程序模块
+	安装至多个应用程序服务器。
+
+installAppModulesToSameServerWithPatternMatching：
+	使用 Java 模式匹配将应用程序模块
+	安装至同一个应用程序服务器。
+
+installAppModulesToSameServerWithMapModulesToServersOption：
+	 使用 AdminApp 对象的 MapModulesToServers 选项将应用程序模块
+	安装至同一个应用程序服务器。
+
+installAppWithClusterOption：
+	 使用 AdminApp 对象的 cluster 选项将应用程序安装至集群中。
+
+installAppWithDefaultBindingOption：
+	使用缺省绑定选项来安装应用程序。
+
+installAppWithDeployEjbOptions：
+	使用 AdminApp 对象的 deployejb 选项来安装应用程序。
+
+installAppWithNodeAndServerOptions：
+	 使用 AdminApp 对象的 node 和 server 选项来安装应用程序。
+
+installAppWithTargetOption：
+	使用 AdminApp 对象的 target 选项来安装应用程序。
+
+installAppWithVariousTasksAndNonTasksOptions：
+	使用不同的已部署任务来安装应用程序。
+
+installWarFile：
+	安装 Web 归档（WAR）文件。
+
+uninstallApplication：
+	卸载应用程序。
+
+第 2 组：查询应用程序配置
+
+checkIfAppExists：
+	显示应用程序是否存在。
+
+getAppDeployedNodes：
+	显示部署了应用程序的节点。
+
+getAppDeploymentTarget：
+	显示应用程序的部署目标。
+
+getTaskInfoForAnApp：
+	显示特定安装任务的详细任务信息。
+
+help：
+	提供 AdminApplication 脚本库的一般帮助信息。
+
+listApplications：
+	显示配置中每个已部署的应用程序。
+
+listApplicationsWithTarget：
+	显示部署目标的每个已部署的应用程序。
+
+listModulesInAnApp：
+	显示已部署应用程序中的每个应用程序模块。
+
+第 3 组：更新应用程序
+
+addPartialAppToAnAppWithUpdateCommand：
+	将应用程序的一部分更新至已部署的应用程序。
+
+addSingleFileToAnAppWithUpdateCommand：
+	将单个文件添加至已部署的应用程序。
+
+addSingleModuleFileToAnAppWithUpdateCommand：
+	将单个模块文件添加至已部署的应用程序。
+
+addUpdateSingleModuleFileToAnAppWithUpdateCommand：
+	将单个模块文件添加至已部署的应用程序并更新该模块文件。
+
+deletePartialAppToAnAppWithUpdateCommand：
+	从已部署的应用程序中删除应用程序的一部分。
+
+deleteSingleFileToAnAppWithUpdateCommand：
+	从已部署的应用程序中删除单个文件。
+
+deleteSingleModuleFileToAnAppWithUpdateCommand：
+	从已部署的应用程序中删除单个模块文件。
+
+updateApplicationUsingDefaultMerge：
+	使用缺省合并操作来更新应用程序
+
+updateApplicationWithUpdateIgnoreNewOption：
+	使用 AdminApp 对象的 update.ignore.new 选项来更新应用程序。
+
+updateApplicationWithUpdateIgnoreOldOption：
+	使用 AdminApp 对象的 update.ignore.old 选项来更新应用程序。
+
+updateEntireAppToAnAppWithUpdateCommand：
+	将整个应用程序更新为已部署的应用程序。
+
+updatePartialAppToAnAppWithUpdateCommand：
+	将应用程序的一部分更新至已部署的应用程序。
+
+updateSingleFileToAnAppWithUpdateCommand：
+	将单个文件更新至已部署的应用程序。
+
+updateSingleModuleFileToAnAppWithUpdateCommand：
+	将单个模块文件更新至已部署的应用程序。
+
+第 4 组：导出应用程序
+
+exportAllApplicationsToDir：
+	将配置中的每个应用程序导出至特定目录。
+
+exportAnAppDDLToDir：
+	将应用程序数据定义语言（DDL）导出至特定目录。
+
+exportAnAppToFile：
+	将应用程序导出至特定文件。
+
+第 5 组：配置应用程序部署
+
+configureApplicationLoading：
+	配置已部署目标的应用程序装入方式。
+
+configureClassLoaderLoadingModeForAnApplication：
+	配置应用程序部署的类装入器装入方式。
+
+configureClassLoaderPolicyForAnApplication：
+	配置应用程序部署的类装入器策略。
+
+configureConnectorModulesOfAnApplication：
+	配置应用程序部署的连接器模块属性。
+
+configureEJBModulesOfAnApplication：
+	 配置应用程序部署的企业 bean（EJB）模块设置。
+
+configureLibraryReferenceForAnApplication：
+	配置应用程序的共享库引用。
+
+configureSessionManagementForAnApplication：
+	配置应用程序部署的会话管理设置。
+
+configureStartingWeightForAnApplication：
+	配置应用程序部署的启动权重设置。
+
+configureWebModulesOfAnApplication：
+	配置应用程序部署的 Web 模块设置。
+
+第 6 组：管理应用程序
+
+startApplicationOnAllDeployedTargets：
+	在每个已部署的目标上启动应用程序。
+
+startApplicationOnCluster：
+	在集群上启动应用程序。
+
+startApplicationOnSingleServer：
+	在单个服务器上启动应用程序。
+
+stopApplicationOnAllDeployedTargets：
+	在每个已部署的目标上停止应用程序。
+
+stopApplicationOnCluster：
+	在集群上停止应用程序。
+
+stopApplicationOnSingleServer：
+	在单个服务器上停止应用程序

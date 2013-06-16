@@ -1,0 +1,53 @@
+WASX7209I: 已使用 SOAP 连接器连接到节点 vbox001CellManager01 上的进程“dmgr”；进程的类型为：DeploymentManager
+WASX7303I: 已将下列选项传递至脚本编制环境，它们将作为参数存储在 argv 变量中：“[get_summary]”。
+__main__ load 20130617001320
+
+
+----------------------------------------------------------------------
+Cell: vbox001Cell01
+Node: vbox001CellManager01	vbox001Node01
+
+
+----------------------------------------------------------------------
+Dmgr:  dmgr
+
+Node:  nodeagent
+
+WebServer:  webserver1
+
+Cluster: [name  JSession   genericJvmArguments    WebContainer]
+
+Independent Server:
+        server1
+            JSESSIONID	/	-1	false
+            0	0	
+            50	50
+        server2
+            JSESSIONID	/	-1	false
+            0	0	
+            50	50
+
+
+
+----------------------------------------------------------------------
+JAASAuthData:
+
+
+----------------------------------------------------------------------
+JDBCProvidler: [name  type  classpath  classname]
+
+
+----------------------------------------------------------------------
+DataSource: [jndi auth desc prov    minconn maxconn timeout unusedtimeout]
+
+
+----------------------------------------------------------------------
+Applications: [name on_servers   binfile binurl cls1 cls2 startorder  ROOT  JNDI]
+    DefaultApplication.ear
+        webserver1	server2
+        true	/wlsapp/DefaultApplication.ear.ear	PARENT_LAST	PARENT_LAST	1
+        安装应用程序的目录:  /wlsapp
+        
+
+
+----------------------------------------------------------------------

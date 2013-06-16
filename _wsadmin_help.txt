@@ -1,0 +1,89 @@
+
+cd d:\IBM\WebSphere\AppServer\profiles
+
+
+\Dmgr01\bin\wsadmin.bat -h
+
+WASX7001I: wsadmin 是用于进行 WebSphere 脚本编制的可执行文件。
+语法：
+
+wsadmin
+        [ -h(elp)  ]
+        [ -?]
+        [ -c <command> ]
+        [ -p <properties_file_name>]
+        [ -profile <profile_script_name>]
+        [ -f <script_file_name>]
+        [ -javaoption java_option]
+        [ -lang  language]
+        [ -wsadmin_classpath  class path]
+        [ -profileName profile]
+        [ -conntype
+                SOAP
+                        [-host host_name]
+                        [-port port_number]
+                        [-user userid]
+                        [-password password] |
+                RMI
+                        [-host host_name]
+                        [-port port_number]
+                        [-user userid]
+                        [-password password] |
+                JSR160RMI
+                        [-host host_name]
+                        [-port port_number]
+                        [-user userid]
+                        [-password password] |
+                IPC
+                        [-ipchost host_name]
+                        [-port port_number]
+                        [-user userid]
+                        [-password password] |
+                NONE
+        ]
+        [ -jobid <jobid_string>]
+        [ -tracefile <trace_file>]
+        [ -appendtrace <true/false>]
+        [ script parameters ]
+
+其中    “command”是要传递给脚本处理器的命令；
+        “properties_file_name”是要使用的 Java 属性文件；
+        “profile_script_name”是要在主命令或文件前运行的
+                脚本文件；
+        “script_file_name”是要传递给脚本处理器的命令；
+        “java_option”是要传递给 Java 程序的标准或非标准
+                Java 选项；
+        “language”是用于解释脚本的语言；
+                支持的值是“jacl”和“jython”。
+        “classpath”是对内置路径追加的类路径；
+        “-conntype”指定所要使用的连接的类型；
+                缺省参数是“SOAP”
+                conntype 为“NONE”表示未建立服务器连接，
+                并且某些操作以本地方式执行；
+        “host_name”是用于 SOAP 或 RMI 连接的主机；
+                缺省值是本地主机；
+        “port_number”是用于 SOAP 或 RMI 连接的端口；
+        “userid”是服务器以安全方式运行时
+                所需的用户标识；
+        “password”是服务器以安全方式运行时
+                所需的密码；
+        “script parameters”是命令行上的任何其他内容。这些内容
+                通过 argv 变量传递给脚本；参数数目
+                由 argc 变量提供。
+        “jobid_string”是用于对 wsadmin 的每次调用
+                进行审计的作业标识字符串；
+        “trace_file”是 wsadmin 跟踪输出定向到的
+                日志文件名和位置；
+
+如果未指定命令或脚本，那么将创建解释器 shell
+以供交互使用。要离开交互式脚本编制会话，
+请使用“quit”或“exit”命令。
+
+可以在单个命令行上指定多个命令、属性文件和
+概要文件。它们将按指定顺序处理和运行。
+
+
+
+\Dmgr01\bin\wsadmin.bat -lang jython -conntype SOAP -host 127.0.0.1 -port 8879
+
+\Dmgr01\bin\wsadmin.bat -lang jython -conntype SOAP -host 127.0.0.1 -port 8879 -f utils.py get_summary > summary.txt

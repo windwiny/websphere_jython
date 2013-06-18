@@ -244,14 +244,8 @@ def get_apps():
     for app in apps:
         dep = AdminConfig.getid('/Deployment:%s/' % app)
         deploymentTargets = AdminConfig.showAttribute(dep, 'deploymentTargets')[1:-1]
-        if deploymentTargets.count('"'):    # app name has space char
-            re0 = re.compile('(".+?")')
-            d1 = re0.findall(deploymentTargets)
-            d1s = "\n".join(d1)
-            for na in deploymentTargets.split():
-                if d1s.count(na): continue
-                d1.append(na)
-            deploymentTargets = d1
+        if '"' in deploymentTargets:    # app name has space char
+            deploymentTargets = deploymentTargets.replace('" "', '"\n"').splitlines()
         else:
             deploymentTargets = deploymentTargets.split()
         DT = []
@@ -264,7 +258,11 @@ def get_apps():
         binurl = AdminConfig.showAttribute(depobj, 'binariesURL')
         clsl = AdminConfig.showAttribute(depobj, 'classloader')
         clslm1 = AdminConfig.showAttribute(clsl, 'mode')
-        mods = AdminConfig.showAttribute(depobj, 'modules')[1:-1].split()
+        mods = AdminConfig.showAttribute(depobj, 'modules')[1:-1]
+        if '"' in mods:
+            mods = mods.replace('" "', '"\n"').splitlines()
+        else:
+            mods = mods.split()
         for i in mods:
             if i.count('WebModuleDeployment'): mods = i; break
         clslm2 = AdminConfig.showAttribute(mods, 'classloaderMode')

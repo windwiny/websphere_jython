@@ -17,7 +17,7 @@ def create_all_help():
         f.close()
 
 def create_attributes(fn=r"_attributes.txt"):
-    f=open(fn, 'wb') 
+    f = open(fn, 'wb')
     for na in AdminConfig.types().splitlines():
         if na.startswith('com.') or na.startswith('org.'):
             continue
@@ -184,10 +184,10 @@ def get_servers():
 def get_j2c():
     J2C = []
     for j2c in AdminConfig.list('JAASAuthData').splitlines():
-        alias = AdminConfig.showAttribute(j2c, 'alias')
-        uid = AdminConfig.showAttribute(j2c, 'userId')
-        pwd = AdminConfig.showAttribute(j2c, 'password')
-        desc =  AdminConfig.showAttribute(j2c, 'description')
+        alias = AdminConfig.showAttribute(j2c, 'alias') or ''
+        uid = AdminConfig.showAttribute(j2c, 'userId') or ''
+        pwd = AdminConfig.showAttribute(j2c, 'password') or ''
+        desc =  AdminConfig.showAttribute(j2c, 'description') or ''
         J2C.append([alias, uid, pwd, desc])
     print 'JAASAuthData:'
     J2C.sort()
@@ -217,7 +217,7 @@ def get_datasource():
         auth = AdminConfig.showAttribute(ds, 'authDataAlias')
         if auth is None: # not user datasource
             continue
-        desc = AdminConfig.showAttribute(ds, 'description')
+        desc = AdminConfig.showAttribute(ds, 'description') or ''
         prov = AdminConfig.showAttribute(ds, 'provider')
         provn = AdminConfig.showAttribute(prov, 'name')
         TYPE = [jndi, auth, desc, provn]
@@ -236,7 +236,7 @@ def get_datasource():
         print '    %s' % ds[0]
         for i in range(1, len(ds)):
             print '        %s' % "\t".join(ds[i])
-        
+
 def get_apps():
     apps = AdminApp.list().splitlines()
     apps.sort()
@@ -254,7 +254,7 @@ def get_apps():
             DT.append(name)
 
         depobj = AdminConfig.showAttribute(dep, 'deployedObject')
-        binf = AdminConfig.showAttribute(depobj, 'useMetadataFromBinaries') 
+        binf = AdminConfig.showAttribute(depobj, 'useMetadataFromBinaries')
         binurl = AdminConfig.showAttribute(depobj, 'binariesURL')
         clsl = AdminConfig.showAttribute(depobj, 'classloader')
         clslm1 = AdminConfig.showAttribute(clsl, 'mode')

@@ -287,11 +287,13 @@ def get_apps():
             print '        %s' % "\t".join(cfg[i])
 
 if __name__ == '__main__':
-    cmds = ['create_all_help', 'create_attributes', 'get_all_info','get_summary']
+    cmds = ['create_all_help', 'create_attributes', 'get_all_info', 'get_summary']
     if len(sys.argv) < 1 or not sys.argv[-1] in cmds:
-        print 'Syntax:'
-        for i in cmds:
-            print '    %s' % i
+        print
+        print "Syntax:"
+        print "  wsadmin.bat -lang jython [ -conntype SOAP -host 127.0.0.1 -port 8879 ] -f utils.py CMD"
+        print
+        print '  CMD is one of:  ', "    ".join(cmds)
         sys.exit(1)
     cmd = eval(sys.argv[-1])
     cmd()

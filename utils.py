@@ -75,6 +75,8 @@ def get_summary():
     sp()
     get_apps()
     sp()
+    get_run_stat()
+    sp()
 
 def sp():
     print "\n\n%s" % ("--" * 35)
@@ -285,6 +287,20 @@ def get_apps():
         print '    %s' % cfg[0]
         for i in range(1, len(cfg)):
             print '        %s' % "\t".join(cfg[i])
+
+def get_run_stat():
+    apps = AdminApp.list().splitlines()
+    apps.sort()
+    for app in apps:
+        status = AdminControl.completeObjectName('type=Application,name=%s,*' % app)
+        if status:
+            pc = re.compile('process=(\w+),')
+            pcs = pc.findall(status)
+            stat = 'RUNNING %s' % '  '.join(pcs)
+        else:
+            stat = 'STOPPED'
+        print '%-40s %s' % (app, stat)
+    print 'Count: %d apps' % len(apps)
 
 if __name__ == '__main__':
     cmds = ['create_all_help', 'create_attributes', 'get_all_info', 'get_summary']

@@ -116,9 +116,9 @@ def get_servers():
 
             jpd = AdminConfig.showAttribute(serverx, 'processDefinitions')[1:-1]  # [xxx]
             jvm = AdminConfig.showAttribute(jpd, 'jvmEntries')[1:-1]
-            minh = AdminConfig.showAttribute(jvm, 'initialHeapSize')
-            maxh = AdminConfig.showAttribute(jvm, 'maximumHeapSize')
-            params = AdminConfig.showAttribute(jvm, 'genericJvmArguments')
+            minh = AdminConfig.showAttribute(jvm, 'initialHeapSize') or ''
+            maxh = AdminConfig.showAttribute(jvm, 'maximumHeapSize') or ''
+            params = AdminConfig.showAttribute(jvm, 'genericJvmArguments') or ''
             JVM = [minh, maxh, params]
 
             svrs = AdminConfig.showAttribute(serverx, 'services')[1:-1].split()
@@ -127,8 +127,8 @@ def get_servers():
             pool = AdminConfig.showAttribute(thp, 'threadPools')[1:-1]
             for i in pool.split():
                 if i.count('WebContainer'): webc = i
-            mint = AdminConfig.showAttribute(webc, 'minimumSize')
-            maxt = AdminConfig.showAttribute(webc, 'maximumSize')
+            mint = AdminConfig.showAttribute(webc, 'minimumSize') or ''
+            maxt = AdminConfig.showAttribute(webc, 'maximumSize') or ''
             WEBT = [mint, maxt]
 
             apps = AdminConfig.showAttribute(serverx, 'components')[1:-1].split()
@@ -138,15 +138,15 @@ def get_servers():
             for i in xx:
                 if i.count('WebContainer'): webc2 = i; break
             sm = AdminConfig.showAttribute(webc2, 'services')[1:-1]
-            cook = AdminConfig.showAttribute(sm, 'defaultCookieSettings')
-            c_name = AdminConfig.showAttribute(cook, 'name')
-            c_age = AdminConfig.showAttribute(cook, 'maximumAge')
-            c_path = AdminConfig.showAttribute(cook, 'path')
-            c_sec = AdminConfig.showAttribute(cook, 'secure')
+            cook = AdminConfig.showAttribute(sm, 'defaultCookieSettings') or ''
+            c_name = AdminConfig.showAttribute(cook, 'name') or ''
+            c_age = AdminConfig.showAttribute(cook, 'maximumAge') or ''
+            c_path = AdminConfig.showAttribute(cook, 'path') or ''
+            c_sec = AdminConfig.showAttribute(cook, 'secure') or ''
             COOK = [c_name, c_path, c_age, c_sec]
 
             scfg = [name, COOK, JVM, WEBT]
-            cln = AdminConfig.showAttribute(serverx, 'clusterName')
+            cln = AdminConfig.showAttribute(serverx, 'clusterName') or ''
             if cln:
                 if not Cluster.has_key(cln):
                     Cluster[cln] = []
@@ -201,9 +201,9 @@ def get_jdbcprovider():
     for jp in AdminConfig.list('JDBCProvider').splitlines():
         classpath = AdminConfig.showAttribute(jp, 'classpath')
         if classpath.endswith('derby.jar'): continue #default
-        name = AdminConfig.showAttribute(jp, 'name')
-        classn = AdminConfig.showAttribute(jp, 'implementationClassName')
-        typen = AdminConfig.showAttribute(jp, 'providerType')
+        name = AdminConfig.showAttribute(jp, 'name') or ''
+        classn = AdminConfig.showAttribute(jp, 'implementationClassName') or ''
+        typen = AdminConfig.showAttribute(jp, 'providerType') or ''
         JP.append([name, typen, classpath, classn])
 
     print 'JDBCProvidler: [name  type  classpath  classname]'
@@ -215,20 +215,20 @@ def get_datasource():
     DS = []
     for ds in AdminConfig.list('DataSource').splitlines():
         name = AdminConfig.showAttribute(ds, 'name')
-        jndi = AdminConfig.showAttribute(ds, 'jndiName')
-        auth = AdminConfig.showAttribute(ds, 'authDataAlias')
+        jndi = AdminConfig.showAttribute(ds, 'jndiName') or ''
+        auth = AdminConfig.showAttribute(ds, 'authDataAlias') or ''
         if auth is None: # not user datasource
             continue
         desc = AdminConfig.showAttribute(ds, 'description') or ''
-        prov = AdminConfig.showAttribute(ds, 'provider')
-        provn = AdminConfig.showAttribute(prov, 'name')
+        prov = AdminConfig.showAttribute(ds, 'provider') or ''
+        provn = AdminConfig.showAttribute(prov, 'name') or ''
         TYPE = [jndi, auth, desc, provn]
 
-        pool = AdminConfig.showAttribute(ds, 'connectionPool')
-        timeo = AdminConfig.showAttribute(pool, 'connectionTimeout')
-        utimeo = AdminConfig.showAttribute(pool, 'unusedTimeout')
-        minc = AdminConfig.showAttribute(pool, 'minConnections')
-        maxc = AdminConfig.showAttribute(pool, 'maxConnections')
+        pool = AdminConfig.showAttribute(ds, 'connectionPool') or ''
+        timeo = AdminConfig.showAttribute(pool, 'connectionTimeout') or ''
+        utimeo = AdminConfig.showAttribute(pool, 'unusedTimeout') or ''
+        minc = AdminConfig.showAttribute(pool, 'minConnections') or ''
+        maxc = AdminConfig.showAttribute(pool, 'maxConnections') or ''
         POOL = [minc, maxc, timeo, utimeo]
 
         DS.append([name, TYPE, POOL])
@@ -255,20 +255,20 @@ def get_apps():
             name = AdminConfig.showAttribute(dt, 'name')
             DT.append(name)
 
-        depobj = AdminConfig.showAttribute(dep, 'deployedObject')
-        binf = AdminConfig.showAttribute(depobj, 'useMetadataFromBinaries')
-        binurl = AdminConfig.showAttribute(depobj, 'binariesURL')
-        clsl = AdminConfig.showAttribute(depobj, 'classloader')
-        clslm1 = AdminConfig.showAttribute(clsl, 'mode')
-        mods = AdminConfig.showAttribute(depobj, 'modules')[1:-1]
+        depobj = AdminConfig.showAttribute(dep, 'deployedObject') or ''
+        binf = AdminConfig.showAttribute(depobj, 'useMetadataFromBinaries') or ''
+        binurl = AdminConfig.showAttribute(depobj, 'binariesURL') or ''
+        clsl = AdminConfig.showAttribute(depobj, 'classloader') or ''
+        clslm1 = AdminConfig.showAttribute(clsl, 'mode') or ''
+        mods = AdminConfig.showAttribute(depobj, 'modules')[1:-1] or ''
         if '"' in mods:
             mods = mods.replace('" "', '"\n"').splitlines()
         else:
             mods = mods.split()
         for i in mods:
             if i.count('WebModuleDeployment'): mods = i; break
-        clslm2 = AdminConfig.showAttribute(mods, 'classloaderMode')
-        startorder = AdminConfig.showAttribute(depobj, 'startingWeight')
+        clslm2 = AdminConfig.showAttribute(mods, 'classloaderMode') or ''
+        startorder = AdminConfig.showAttribute(depobj, 'startingWeight') or ''
         #cls3 = AdminConfig.showAttribute(mods, 'classloader')
         #clslm3 = AdminConfig.showAttribute(cls3, 'mode')
         ROOT = []
